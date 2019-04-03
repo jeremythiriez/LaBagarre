@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour {
 		{
 			attack = true;
 			_anim.SetBool("attack", true);
+			
+			
+			
+			rigidbody.velocity = transform.forward * 20;
 		}
 
 		if (attack && !_joybutton_Y.Pressed)
