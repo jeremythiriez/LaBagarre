@@ -44,7 +44,10 @@ public class PlayerController : MonoBehaviour {
 		float y = _joystick.Vertical;
 		
 		rigidbody.velocity = new Vector3(x * 0.3f, rigidbody.velocity.y, y * 0.3f);
-
+		transform.Rotate(0.0f, -Input.gyro.rotationRateUnbiased.y * 2, 0.0f);
+		print(transform.rotation.ToString());
+		
+		
 		
 		Walk(x, y);
 		Slash();
@@ -59,15 +62,12 @@ public class PlayerController : MonoBehaviour {
 		{
 			attack = true;
 			_anim.SetBool("attack", true);
-			print("attack true");
 		}
 
 		if (attack && !_joybutton_Y.Pressed)
 		{
 			attack = false;
 			_anim.SetBool("attack", false);
-			print("attack false");
-
 		}
 	}
 	
@@ -77,15 +77,12 @@ public class PlayerController : MonoBehaviour {
 		{
 			block = true;
 			_anim.SetBool("block", true);
-			print("block true");
 		}
 
 		if (block && !_joybutton_X.Pressed)
 		{
 			block = false;
 			_anim.SetBool("block", false);
-			print("block false");
-
 		}
 	}
 	
@@ -95,15 +92,12 @@ public class PlayerController : MonoBehaviour {
 		{
 			slash = true;
 			_anim.SetBool("slash", true);
-			print("slash true");
 		}
 
 		if (slash && !_joybutton_B.Pressed)
 		{
 			slash = false;
 			_anim.SetBool("slash", false);
-			print("slash false");
-
 		}
 	}
 
@@ -113,15 +107,12 @@ public class PlayerController : MonoBehaviour {
 		{
 			jump = true;
 			_anim.SetBool("jump", true);
-			print("jump true");
 		}
 
 		if (jump && !_joybutton_A.Pressed)
 		{
 			jump = false;
 			_anim.SetBool("jump", false);
-			print("jump false");
-
 		}
 	}
 
@@ -152,7 +143,6 @@ public class PlayerController : MonoBehaviour {
 			{
 				_anim.SetBool("run", false);
 			}
-
 		}
 	}
 }

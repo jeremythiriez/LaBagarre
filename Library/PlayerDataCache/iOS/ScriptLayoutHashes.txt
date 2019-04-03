@@ -1,6 +1,6 @@
 iOS
 PlayerPath?
-/Users/jeremythiriez/UnityProject/TestLaBagarre/builds/IosBuild
+/Users/jeremythiriez/KMU/LaBagarre/builds/IosBuild/IosBuild
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
